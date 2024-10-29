@@ -1,0 +1,10 @@
+- Lista de Alojamientos OK // Mauricio
+- Guardar un Alojamiento OK
+
+- Actualizar Alojamientos //Ángel
+- Lista de Reservaciones
+
+- Cancelar una Reservacion // Fabiola
+- Guardar Reservaciones    // Alejandra
+
+- Calendario de Reservaciones por alojamiento //Luis Tobar
