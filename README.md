@@ -1,8 +1,32 @@
-# React + Vite
+# API_TOKEN_Booking_REACT
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Grupo #1.
+Luis Tobar
+Ángel Aristides Alvarado Landaverde
+Carlos flores
+Andrea Alejandra Mena Villatoro
+Alison Fabiola Batres Torres
+Josúe Mauricio Benavides Batres
 
-Currently, two official plugins are available:
+## Tabla de Contenidos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Características](#características)
+- [Instalación](#instalación)
+- [Uso](#uso)
+- [Contribución](#contribución)
+- [Licencia](#licencia)
+
+## Características
+
+- [Característica 1]
+- [Característica 2]
+- [Característica 3]
+- [Agregar más características si es necesario]
+
+## Instalación
+
+Sigue estos pasos para instalar el proyecto:
+
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/tu_usuario/nombre_del_repositorio.git
