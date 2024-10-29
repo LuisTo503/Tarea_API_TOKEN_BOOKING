@@ -1,12 +1,20 @@
 # API_TOKEN_Booking_REACT
 
+
+# Integrantes del Proyecto
 Grupo #1.
-Luis Tobar
-Ángel Aristides Alvarado Landaverde
-Carlos flores
-Andrea Alejandra Mena Villatoro
-Alison Fabiola Batres Torres
-Josúe Mauricio Benavides Batres
+
+A continuación se presenta la lista de integrantes que colaboraron en el proyecto:
+
+| Nombre                              | Rol                              |
+|-------------------------------------|----------------------------------|
+| Ángel Aristides Alvarado Landaverde | Desarrollador Frontend           |
+| Carlos Flores                       | Desarrolladora Backend           |
+| Andrea Alejandra Mena Villatoro     | Diseñador UI/UX                  |
+| Alison Fabiola Batres Torres        | Tester                           |
+| Luis Tobar                          | Project Manager  Documentación   |
+
+
 
 ## Tabla de Contenidos
 
@@ -57,3 +65,12 @@ Para ejecutar el proyecto en tu entorno local, sigue estos pasos:
    npm run dev
    Accede a la aplicación: Abre tu navegador y ve a http://localhost:3000 para ver la aplicación en acción.
 
+```markdown
+## Licencia
+
+Este proyecto está bajo la Licencia MIT. Para más detalles, consulta el archivo [LICENSE](LICENSE).
+
+### Resumen de la Licencia MIT
+
+La Licencia MIT permite que cualquier persona use, copie, modifique, fusione, publique y distribuya este software, así como también se ofrezca como software de código abierto. Sin embargo, el software se proporciona "tal cual", sin ninguna garantía expresa o implícita, lo que significa que los autores no son responsables de los daños que puedan surgir de su uso.
+Resumen
