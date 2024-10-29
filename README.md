@@ -12,6 +12,14 @@ Josúe Mauricio Benavides Batres
 
 ## Características
 
+- [Características](#caracteristicas)
+- [Instalación](#instalación)
+- [Uso](#uso)
+- [Contribución](#contribución)
+- [Licencia](#licencia)
+
+## Características
+
 - **Gestión de Reservas**: Permite a los usuarios crear, ver, editar y eliminar reservas de manera sencilla.
 - **Interfaz Intuitiva**: Diseño amigable y fácil de usar que mejora la experiencia del usuario.
 - **Validación de Datos**: Asegura que todos los datos ingresados sean válidos antes de ser enviados al servidor.
@@ -24,17 +32,6 @@ Josúe Mauricio Benavides Batres
 - **Notificaciones**: Envío de confirmaciones de reserva por correo electrónico (si aplica).
 
 
-- [Instalación](#instalación)
-- [Uso](#uso)
-- [Contribución](#contribución)
-- [Licencia](#licencia)
-
-## Características
-
-- [Característica 1]
-- [Característica 2]
-- [Característica 3]
-- [Agregar más características si es necesario]
 
 ## Instalación
 
@@ -48,4 +45,15 @@ Sigue estos pasos para instalar el proyecto:
 git add README.md
 git commit -m "Añadir README.md"
 git push
+
+## Uso
+
+Para ejecutar el proyecto en tu entorno local, sigue estos pasos:
+
+1. **Instala las dependencias**:
+   Asegúrate de estar en la carpeta del proyecto y ejecuta:
+   ```bash
+   npm install
+   npm run dev
+   Accede a la aplicación: Abre tu navegador y ve a http://localhost:3000 para ver la aplicación en acción.
 
