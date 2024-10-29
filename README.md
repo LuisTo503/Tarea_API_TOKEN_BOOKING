@@ -30,3 +30,9 @@ Sigue estos pasos para instalar el proyecto:
 1. Clona el repositorio:
    ```bash
    git clone https://github.com/tu_usuario/nombre_del_repositorio.git
+
+## Actualizar Repositorio
+git add README.md
+git commit -m "Añadir README.md"
+git push
+
