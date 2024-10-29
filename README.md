@@ -9,10 +9,10 @@ A continuación se presenta la lista de integrantes que colaboraron en el proyec
 | Nombre                              | Rol                              |
 |-------------------------------------|----------------------------------|
 | Ángel Aristides Alvarado Landaverde | Desarrollador Frontend           |
-| Carlos Flores                       | Desarrolladora Backend           |
-| Andrea Alejandra Mena Villatoro     | Diseñador UI/UX                  |
+| Carlos Flores                       | Desarrollador Backend            |
+| Andrea Alejandra Mena Villatoro     | Diseñadora UI/UX                 |
 | Alison Fabiola Batres Torres        | Tester                           |
-| Luis Tobar                          | Project Manager  Documentación   |
+| Luis Tobar                          | Project Manager / Documentación  |
 
 
 
@@ -50,9 +50,9 @@ Sigue estos pasos para instalar el proyecto:
    git clone https://github.com/LuisTo503/Tarea_API_TOKEN_BOOKING.git
 
 ## Actualizar Repositorio
-git add README.md
-git commit -m "Añadir README.md"
-git push
+- git add README.md
+- git commit -m "Añadir README.md"
+- git push
 
 ## Uso
 
@@ -63,14 +63,16 @@ Para ejecutar el proyecto en tu entorno local, sigue estos pasos:
    ```bash
    npm install
    npm run dev
-   Accede a la aplicación: Abre tu navegador y ve a http://localhost:3000 para ver la aplicación en acción.
+   - Accede a la aplicación: Abre tu navegador y ve a http://localhost:3000
+   para ver la aplicación en acción.
 
-```markdown
 ## Licencia
 
 Este proyecto está bajo la Licencia MIT. Para más detalles, consulta el archivo [LICENSE](LICENSE).
 
 ### Resumen de la Licencia MIT
 
-La Licencia MIT permite que cualquier persona use, copie, modifique, fusione, publique y distribuya este software, así como también se ofrezca como software de código abierto. Sin embargo, el software se proporciona "tal cual", sin ninguna garantía expresa o implícita, lo que significa que los autores no son responsables de los daños que puedan surgir de su uso.
-Resumen
+La Licencia MIT permite que cualquier persona use, copie, modifique, fusione, publique y 
+distribuya este software, así como también se ofrezca como software de código abierto.
+Sin embargo, el software se proporciona "tal cual", sin ninguna garantía expresa o implícita, 
+lo que significa que los autores no son responsables de los daños que puedan surgir de su uso.
