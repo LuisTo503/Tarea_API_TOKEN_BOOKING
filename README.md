@@ -11,7 +11,7 @@ A continuación se presenta la lista de integrantes que colaboraron en el proyec
 | Ángel Aristides Alvarado Landaverde | Desarrollador Frontend           |
 | Carlos Flores                       | Desarrollador Backend            |
 | Andrea Alejandra Mena Villatoro     | Diseñadora UI/UX                 |
-| Josúe Mauricio Benevides Batres     | Diseñadora UI/UX                 |
+| Josúe Mauricio Benavides Batres     | Diseñadora UI/UX                 |
 | Alison Fabiola Batres Torres        | Tester                           |
 | Luis Tobar                          | Project Manager / Documentación  |
 
