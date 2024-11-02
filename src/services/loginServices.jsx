@@ -18,4 +18,21 @@ const logout = () => {
     console.log("Has cerrado sesion");
 }
 
-export { login, logout }
+// Función para cancelar una reservación
+const cancelReservation = async (reservationId) => {
+    const token = sessionStorage.getItem('token_bookings');
+    try {
+        const response = await axios.delete(`https://apibookingsaccomodations-production.up.railway.app/api/V1/reservations/${reservationId}`, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+        return response.data;
+    } catch (error) {
+        console.error("Error al cancelar la reservación", error);
+        throw error;
+    }
+};
+
+
+export { login, logout, cancelReservation }
