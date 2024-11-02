@@ -1,43 +1,45 @@
-// src/components/Login.jsx
-import React, { useState } from 'react';
-import { loginUser } from '../services/api';
+import React from 'react'
+import { useForm } from 'react-hook-form'
+import { login } from '../services/loginServices';
+import { useNavigate } from 'react-router-dom';
 
-const Login = ({ onLoginSuccess }) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+export default function Login() {
+    //entrada de datos del formulario
+    const { register, handleSubmit } = useForm()
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    try {
-      const userData = await loginUser(email, password);
-      onLoginSuccess(userData);  // Llama a una función para manejar el inicio de sesión
-    } catch (error) {
-      setError("Usuario o contraseña incorrectos");
+    const navigate = useNavigate()
+
+    //metodo para validar el usuario
+    const loginForm = async (data) => {
+        console.log(data); //{email, password}
+        const response = await login(data);
+        //validando la respuesta del login
+        if(response?.token){
+            //si esta autorizada, guardamos el token en el sessionstorage
+            sessionStorage.setItem('token_bookings', response.token)
+        }
+        //redireccione a los alojamientos
+        navigate('/alojamientos')
+        console.log(response);
+        
     }
-  };
 
-  return (
-    <div>
-      <h2>Iniciar Sesión</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          placeholder="Correo Electrónico"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Contraseña"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        {error && <p>{error}</p>}
-        <button type="submit">Iniciar Sesión</button>
-      </form>
-    </div>
-  );
-};
-
-export default Login;
+    return (
+        <div>
+            <h1>Iniciar Sesion</h1>
+            <form action="" onSubmit={handleSubmit(loginForm)}>
+                <div>
+                    <label htmlFor="">Correo</label>
+                    <input type="email" {...register('email')} />
+                </div>
+                <div>
+                    <label htmlFor="">Contraseña</label>
+                    <input type="password" {...register('password')}/>
+                </div>
+                <div>
+                    <button type='submit'>Iniciar sesion</button>
+                </div>
+            </form>
+        </div>
+    )
+}
