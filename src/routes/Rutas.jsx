@@ -4,6 +4,7 @@ import Login from '../components/Login';
 import Accomodations from '../components/Accomodations';
 import ReservationsOverview from '../components/ReservationsOverview'; 
 import Bookings from '../components/Reservations';
+import NewAccommodation from '../components/NewAccomodation';
 
 export default function Rutas() {
     return (
@@ -12,6 +13,7 @@ export default function Rutas() {
                 <Route path='/' element={<Login />} />
                 <Route path='/alojamientos' element={<Accomodations />} />
                 <Route path='/reservaciones' element={<Bookings />} /> {/* Nueva ruta */}
+                <Route path='/newalojamiento' element={<NewAccommodation/>}/>
             </Routes>
         </BrowserRouter>
     );
