@@ -29,19 +29,22 @@ export default function Bookings() {
     const eventPropGetter = (event) => {
         let backgroundColor = '';
         let color = '';
+        let borderColor = '';
         switch (event.status) {
             case 'CONFIRMED':
                 backgroundColor = '#dbebff';
                 color = '#3555b9';
+                borderColor = '#3555b9';
                 break;
             case 'CANCELLED':
                 backgroundColor = '#fee3e3';
                 color = '#a63535';
+                borderColor = '#a63535';
                 break;
             default:
                 backgroundColor = 'gray';
         }
-        return { style: { backgroundColor, color } };
+        return { style: { backgroundColor, color, border: `1px solid ${borderColor}` } };
     };
 
     useEffect(() => {
@@ -64,8 +67,9 @@ export default function Bookings() {
                 isAuthenticated ? (
                     <>
                         <h1>Lista de Reservaciones</h1>
+                        <br/>
                         <div style={{
-                            height: "95vh",
+                            height: "75vh",
                             width: "70vw"
                         }}>
                             <Calendar
