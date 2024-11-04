@@ -37,8 +37,8 @@ export default function Accomodations() {
             );
             if (response.status === 201) {
                 console.log("Alojamiento guardado exitosamente!");
-                fetchData(); // Refrescar la lista de alojamientos
-                setIsModalOpen(false); // Cerrar el modal
+                fetchData(); // Refresca la lista de alojamientos
+                setIsModalOpen(false); // Cierra el modal
             }
         } catch (error) {
             console.error("Error al guardar el alojamiento:", error.response?.data || error.message);
