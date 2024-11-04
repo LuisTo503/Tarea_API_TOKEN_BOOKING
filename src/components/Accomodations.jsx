@@ -98,9 +98,9 @@ export default function Accomodations() {
             >
                 <div className="text-lg font-semibold text-center py-4 border-b border-gray-700">Panel de Control</div>
                 <nav className="flex flex-col p-4 space-y-4">
-                    <a href="#alojamientos" className="flex items-center text-gray-200 hover:bg-gray-700 p-2 rounded">
+                    <Link to="/alojamientos" className="flex items-center text-gray-200 hover:bg-gray-700 p-2 rounded">
                         <i className="fas fa-home mr-2"></i> Alojamientos
-                    </a>
+                    </Link>
                     
                     <Link to="/reservaciones" className="flex items-center text-gray-200 hover:bg-gray-700 p-2 rounded">
                         <i className="fas fa-calendar-alt mr-2"></i> Reservaciones
