@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getAccomodations, updateAccomodation } from '../services/accomodationServices';
+import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { useForm } from 'react-hook-form';
@@ -86,26 +87,28 @@ export default function Accomodations() {
     };
 
     return (
-        <div 
+        <div
             className="flex h-screen bg-gray-800 overflow-hidden"
-            onClick={handleOutsideClick} 
+            onClick={handleOutsideClick}
         >
             {/* Sidebar */}
-            <aside 
+            <aside
                 className={`sidebar w-64 bg-gray-800 text-white flex flex-col fixed inset-y-0 transform ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:relative md:translate-x-0 transition-transform duration-200 ease-in-out`}
-                onClick={(e) => e.stopPropagation()} 
+                onClick={(e) => e.stopPropagation()}
             >
                 <div className="text-lg font-semibold text-center py-4 border-b border-gray-700">Panel de Control</div>
                 <nav className="flex flex-col p-4 space-y-4">
                     <a href="#alojamientos" className="flex items-center text-gray-200 hover:bg-gray-700 p-2 rounded">
                         <i className="fas fa-home mr-2"></i> Alojamientos
                     </a>
-                    <a href="#reservaciones" className="flex items-center text-gray-200 hover:bg-gray-700 p-2 rounded">
+                    
+                    <Link to="/reservaciones" className="flex items-center text-gray-200 hover:bg-gray-700 p-2 rounded">
                         <i className="fas fa-calendar-alt mr-2"></i> Reservaciones
-                    </a>
-                    <button 
+                    </Link>
+                    
+                    <button
                         className="mt-auto flex items-center text-gray-200 hover:bg-gray-700 p-2 rounded"
-                        onClick={() => setIsSidebarOpen(false)} 
+                        onClick={() => setIsSidebarOpen(false)}
                     >
                         <i className="fas fa-sign-out-alt mr-2"></i> Cerrar Sidebar
                     </button>
@@ -116,13 +119,13 @@ export default function Accomodations() {
             <main className="flex-1 bg-gray-100 overflow-y-auto">
                 <div className="flex justify-between items-center p-4 bg-gray-200 border-b border-gray-300">
                     <h1 className="text-2xl font-bold">Alojamientos</h1>
-                    <button 
+                    <button
                         className="bg-gray-900 text-white px-4 py-2 rounded hover:bg-gray-700 md:hidden"
                         onClick={() => setIsSidebarOpen(!isSidebarOpen)}
                     >
                         <i className="fas fa-bars"></i>
                     </button>
-                    <button 
+                    <button
                         className="bg-gray-900 text-white px-4 py-2 rounded hover:bg-gray-700 hidden md:block"
                         onClick={() => setIsModalOpen(true)}
                     >
@@ -142,14 +145,14 @@ export default function Accomodations() {
                                         <p className="text-sm text-gray-600"><i className="fas fa-info-circle mr-2"></i>{item.description}</p>
                                     </div>
                                     <div className="flex space-x-2">
-                                        <button 
-                                            className="text-blue-500 hover:text-blue-700" 
+                                        <button
+                                            className="text-blue-500 hover:text-blue-700"
                                             onClick={() => editar(item.id, { name: item.name, address: item.address, description: item.description })}
                                         >
                                             <i className="fas fa-edit"></i>
                                         </button>
-                                        <button 
-                                            className="text-red-500 hover:text-red-700" 
+                                        <button
+                                            className="text-red-500 hover:text-red-700"
                                             onClick={() => eliminar(item.id)}
                                         >
                                             <i className="fas fa-trash-alt"></i>
@@ -165,56 +168,56 @@ export default function Accomodations() {
 
                 {/* Modal para agregar nuevo alojamiento */}
                 {isModalOpen && (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-        <div style={{ maxWidth: '400px', margin: '0 auto', padding: '20px', border: '1px solid #ccc', borderRadius: '8px', background: 'white', color: 'black' }}>
-            <h1 style={{ textAlign: 'center' }}>Guardar un Alojamiento!!</h1>
-            <form onSubmit={handleSubmit(saveAccommodation)}>
-                <div style={{ marginBottom: '15px' }}>
-                    <label htmlFor="nombre">Nombre: </label>
-                    <input
-                        type="text"
-                        placeholder="Favor ingresar el Nombre"
-                        {...register('nombre', { required: true })}
-                        style={{ width: '100%', padding: '8px', marginTop: '5px' }}
-                    />
-                </div>
+                    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+                        <div style={{ maxWidth: '400px', margin: '0 auto', padding: '20px', border: '1px solid #ccc', borderRadius: '8px', background: 'white', color: 'black' }}>
+                            <h1 style={{ textAlign: 'center' }}>Guardar un Alojamiento!!</h1>
+                            <form onSubmit={handleSubmit(saveAccommodation)}>
+                                <div style={{ marginBottom: '15px' }}>
+                                    <label htmlFor="nombre">Nombre: </label>
+                                    <input
+                                        type="text"
+                                        placeholder="Favor ingresar el Nombre"
+                                        {...register('nombre', { required: true })}
+                                        style={{ width: '100%', padding: '8px', marginTop: '5px' }}
+                                    />
+                                </div>
 
-                <div style={{ marginBottom: '15px' }}>
-                    <label htmlFor="descripcion">Descripción: </label>
-                    <textarea
-                        placeholder="Favor ingresar una breve descripción"
-                        {...register('descripcion', { required: true })}
-                        style={{ width: '100%', padding: '8px', marginTop: '5px' }}
-                    />
-                </div>
+                                <div style={{ marginBottom: '15px' }}>
+                                    <label htmlFor="descripcion">Descripción: </label>
+                                    <textarea
+                                        placeholder="Favor ingresar una breve descripción"
+                                        {...register('descripcion', { required: true })}
+                                        style={{ width: '100%', padding: '8px', marginTop: '5px' }}
+                                    />
+                                </div>
 
-                <div style={{ marginBottom: '15px' }}>
-                    <label htmlFor="direccion">Dirección del lugar: </label>
-                    <input
-                        type="text"
-                        placeholder="Favor ingresar la dirección del lugar"
-                        {...register('direccion', { required: true })}
-                        style={{ width: '100%', padding: '8px', marginTop: '5px' }}
-                    />
-                </div>
+                                <div style={{ marginBottom: '15px' }}>
+                                    <label htmlFor="direccion">Dirección del lugar: </label>
+                                    <input
+                                        type="text"
+                                        placeholder="Favor ingresar la dirección del lugar"
+                                        {...register('direccion', { required: true })}
+                                        style={{ width: '100%', padding: '8px', marginTop: '5px' }}
+                                    />
+                                </div>
 
-                <button 
-                    type="submit" 
-                    style={{ width: '100%', padding: '10px', backgroundColor: '#007bff', color: '#fff', border: 'none', borderRadius: '4px', marginBottom: '10px' }}
-                >
-                    Guardar
-                </button>
-                <button
-                    type="button"
-                    onClick={() => setIsModalOpen(false)}
-                    style={{ width: '100%', padding: '10px', backgroundColor: '#dc3545', color: '#fff', border: 'none', borderRadius: '4px' }}
-                >
-                    Cancelar
-                </button>
-            </form>
-        </div>
-    </div>
-)}
+                                <button
+                                    type="submit"
+                                    style={{ width: '100%', padding: '10px', backgroundColor: '#007bff', color: '#fff', border: 'none', borderRadius: '4px', marginBottom: '10px' }}
+                                >
+                                    Guardar
+                                </button>
+                                <button
+                                    type="button"
+                                    onClick={() => setIsModalOpen(false)}
+                                    style={{ width: '100%', padding: '10px', backgroundColor: '#dc3545', color: '#fff', border: 'none', borderRadius: '4px' }}
+                                >
+                                    Cancelar
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                )}
 
             </main>
         </div>

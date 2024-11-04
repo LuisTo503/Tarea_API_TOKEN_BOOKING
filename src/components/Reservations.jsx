@@ -1,12 +1,14 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from 'react'
 import { getBookings } from '../services/bookingServices'
+import { Link } from 'react-router-dom';
 import { Calendar, dayjsLocalizer } from 'react-big-calendar'
 import "react-big-calendar/lib/css/react-big-calendar.css"
 import dayjs from 'dayjs'
 
 export default function Bookings() {
     const [bookings, setBookings] = useState([])
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     //estado para verificar si el usuario esta autenticado
     const [isAuthenticated, setIsAuthenticated] = useState(false)
     //inicializando calendario con formato dayJS
@@ -58,19 +60,66 @@ export default function Bookings() {
             setIsAuthenticated(false)
         }
 
-    }, [])
+    }, []);
+
+    const handleOutsideClick = (event) => {
+        if (isSidebarOpen && !event.target.closest('.sidebar')) {
+            setIsSidebarOpen(false);
+        }
+    };
 
     return (
-        <div>
+        <div
+            className="flex h-screen bg-gray-800 overflow-hidden"
+            onClick={handleOutsideClick}
+        >
+            {/* Sidebar */}
+            <aside
+                className={`sidebar w-64 bg-gray-800 text-white flex flex-col fixed inset-y-0 transform ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:relative md:translate-x-0 transition-transform duration-200 ease-in-out`}
+                onClick={(e) => e.stopPropagation()}
+            >
+                <div className="text-lg font-semibold text-center py-4 border-b border-gray-700">Panel de Control</div>
+                <nav className="flex flex-col p-4 space-y-4">
+                    <a href="#alojamientos" className="flex items-center text-gray-200 hover:bg-gray-700 p-2 rounded">
+                        <i className="fas fa-home mr-2"></i> Alojamientos
+                    </a>
+                    
+                    <Link to="/reservaciones" className="flex items-center text-gray-200 hover:bg-gray-700 p-2 rounded">
+                        <i className="fas fa-calendar-alt mr-2"></i> Reservaciones
+                    </Link>
+                    
+                    <button
+                        className="mt-auto flex items-center text-gray-200 hover:bg-gray-700 p-2 rounded"
+                        onClick={() => setIsSidebarOpen(false)}
+                    >
+                        <i className="fas fa-sign-out-alt mr-2"></i> Cerrar Sidebar
+                    </button>
+                </nav>
+            </aside>
+            {/* Main content */}
+            <main className="flex-1 bg-gray-100 overflow-y-auto">
+                <div className="flex justify-between items-center p-4 bg-gray-200 border-b border-gray-300">
+                    <h1 className="text-2xl font-bold">Reservación</h1>
+                    <button
+                        className="bg-gray-900 text-white px-4 py-2 rounded hover:bg-gray-700 md:hidden"
+                        onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+                    >
+                        <i className="fas fa-bars"></i>
+                    </button>
+                    <button
+                        className="bg-gray-900 text-white px-4 py-2 rounded hover:bg-gray-700 hidden md:block"
+                        onClick={() => setIsModalOpen(true)}
+                    >
+                        <i className="fas fa-plus mr-2"></i> Nueva Reservación
+                    </button>
+                </div>
             {/** validamos si la persona esta autenticada */}
             {
                 isAuthenticated ? (
                     <>
-                        <h1>Lista de Reservaciones</h1>
-                        <br/>
                         <div style={{
-                            height: "75vh",
-                            width: "70vw"
+                            height: "70vh",
+                            width: "60vw"
                         }}>
                             <Calendar
                                 localizer={localizer}
@@ -95,6 +144,7 @@ export default function Bookings() {
                     </>
                 ) : <h2>No estas autorizado, inicia sesion</h2>
             }
+            </main>
         </div>
     )
 }
