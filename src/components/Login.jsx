@@ -25,21 +25,39 @@ export default function Login() {
     }
 
     return (
-        <div>
-            <h1>Iniciar Sesion</h1>
-            <form action="" onSubmit={handleSubmit(loginForm)}>
-                <div>
-                    <label htmlFor="">Correo</label>
-                    <input type="email" {...register('email')} />
-                </div>
-                <div>
-                    <label htmlFor="">Contraseña</label>
-                    <input type="password" {...register('password')}/>
-                </div>
-                <div>
-                    <button type='submit'>Iniciar sesion</button>
-                </div>
-            </form>
-        </div>
+        <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="bg-white shadow-md rounded-lg p-8 w-full max-w-sm">
+        <h1 className="text-2xl font-semibold text-center mb-6">Iniciar Sesión</h1>
+        <form onSubmit={handleSubmit(loginForm)}>
+            <div className="mb-4">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700">Correo</label>
+                <input 
+                    type="email" 
+                    {...register('email')} 
+                    className="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                    placeholder="Ingresa tu correo"
+                />
+            </div>
+            <div className="mb-6">
+                <label htmlFor="password" className="block text-sm font-medium text-gray-700">Contraseña</label>
+                <input 
+                    type="password" 
+                    {...register('password')} 
+                    className="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                    placeholder="Ingresa tu contraseña"
+                />
+            </div>
+            <div>
+                <button 
+                    type='submit' 
+                    className="w-full bg-blue-500 text-white font-semibold py-2 rounded-md hover:bg-blue-600 transition duration-200"
+                >
+                    Iniciar sesión
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
     )
 }
